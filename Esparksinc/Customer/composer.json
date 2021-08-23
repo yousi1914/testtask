@@ -20,8 +20,8 @@
     "prefer-stable": true,
     "repositories": [
     {
-      "type": "bitbucket",
-      "url": "https://bitbucket.org/yousafesparks/testtask/src/master/Esparksinc/Customer/"
+      "type": "github",
+      "url": "https://github.com/yousi1914/testtask.git"
     }
   ]
 }
