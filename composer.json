@@ -1,5 +1,5 @@
 {
-    "name": "esparksinc/magento-test-extension",
+    "name": "espark/magento-test-extension",
     "description": "Testing Extension for Magento 2",
     "type": "magento2-module",
     "version": "2.1.1",
