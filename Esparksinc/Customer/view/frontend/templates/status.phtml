@@ -1,0 +1,35 @@
+<?php
+
+$optionsArray = $block->getAllStatus();	
+$customerStatus =  $block->getCustomerStatus();
+
+?>
+
+<form action="<?php /* @escapeNotVerified */ echo $block->getBaseUrl() . 'status/customer/post' ?>" method="post" id="form-validate" enctype="multipart/form-data" autocomplete="off" data-mage-init='{"validation":{}}' data-hasrequired="<?php /* @escapeNotVerified */ echo __('* Required Fields') ?>">
+        <div class="field required">
+            <label for="status" class="label"><span><?php /* @escapeNotVerified */ echo __('Select Customer Status') ?></span><span class="span">*</span></label>
+            <div class="control">
+            <select name="customer_status" id="customer_status">
+            <?php
+                // $selectedVal="Hot";
+                foreach ($optionsArray as $option)
+                if(!empty($option))
+                {?>
+                    <option 
+                    <?php if($customerStatus === $option['value'] ){
+                        echo "selected='selected'";
+                    }?> 
+                    value="<?php echo($option['value']); ?>" >
+                <?php echo($option['label']); ?>
+                </option>
+                <?php
+                }
+                ?>
+                
+            </select>
+            </div>
+        </div><br/>
+        <div class="primary">
+            <button type="submit" class="action submit primary" title="<?php /* @escapeNotVerified */ echo __('Submit') ?>"><span><?php /* @escapeNotVerified */ echo __('Submit') ?></span></button>
+        </div>
+</form>
